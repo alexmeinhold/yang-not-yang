@@ -5,7 +5,7 @@ Image Classifier to determine whether Andrew Yang is in a given image
 ```bash
 python3 -m venv env
 source env/bin/activate
-pip install fastai flask Pillow
+pip install -r requirements.txt
 ```
 
 ## Usage
