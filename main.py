@@ -35,6 +35,16 @@ def upload_file():
     else:
         return render_template('index.html', image=None, prediction=None)
 
+# register error routes
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template('500.html'), 500
+
 def save_picture(file):
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(file.filename)
@@ -56,4 +66,3 @@ def classify_image(filename):
         return 'Yang'
     else:
         return 'Not Yang'
-    
