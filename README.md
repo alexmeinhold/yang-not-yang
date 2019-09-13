@@ -10,7 +10,9 @@ pip install -r requirements.txt
 
 ## Usage
 ```bash
-FLASK_APP=main.py flask run
+export FLASK_APP=main.py
+export FLASK_DEBUG=true
+flask run
 ```
 
-![](yang-not-yang.gif)
+![](screenshot.png)
