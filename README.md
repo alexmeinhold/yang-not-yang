@@ -15,4 +15,10 @@ export FLASK_DEBUG=true
 flask run
 ```
 
+## Train Model
+```bash
+python download_data.py
+python model.py
+```
+
 ![](screenshot.png)
