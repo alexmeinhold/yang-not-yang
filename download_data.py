@@ -1,14 +1,38 @@
-from pathlib import Path
+import os
+import shutil
 
-from fastai.vision import download_images, verify_images
+import requests
+from PIL import Image
 
 
-categories = ['yang','not_yang']
-path = Path('data')
+def download_images(urls, destination):
+    os.makedirs(destination, exist_ok=True)
 
-for category in categories:
-    destination = path/category
-    destination.mkdir(parents=True, exist_ok=True)
-    csv_file = category + '.csv'
-    download_images(csv_file, destination, max_pics=400)
-    verify_images(destination, delete=True, max_size=500)
+    with open(urls) as f:
+        for index, url in enumerate(f):
+            try:
+                response = requests.get(url, stream=True)
+                with open(f"{destination}/{index}.jpg", "wb") as out_file:
+                    shutil.copyfileobj(response.raw, out_file)
+            except Exception as e:
+                print(str(e))
+
+
+def verify_images(directory):
+    for image in os.listdir(directory):
+        img_path = os.path.join(directory, image)
+        try:
+            img = Image.open(img_path)
+            img.verify()
+        except (IOError, SyntaxError) as e:
+            os.remove(img_path)
+
+
+CATEGORIES = ["yang", "not_yang"]
+PATH = "data"
+
+for category in CATEGORIES:
+    urls = category + ".txt"
+    destination = os.path.join(PATH, category)
+    download_images(urls, destination)
+    verify_images(destination)
