@@ -1,5 +1,5 @@
 # Yang-not-Yang Image Classifier
-Image Classifier to determine whether Andrew Yang is in a given image
+Image Classifier to determine whether Andrew Yang is in a given image or not
 
 ## Installation
 ```bash
@@ -18,6 +18,7 @@ flask run
 ## Train Model
 ```bash
 python download_data.py
+python split_data.py
 python model.py
 ```
 
