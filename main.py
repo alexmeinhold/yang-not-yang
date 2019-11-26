@@ -43,7 +43,7 @@ def upload_file():
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             image_path = save_picture(file, filename)
-            image_bytes = open(f"static/{filename}", "rb").read()
+            image_bytes = open(image_path, "rb").read()
             prediction = get_prediction(image_bytes=image_bytes)
             return render_template(
                 "index.html", image=image_path, prediction=prediction
