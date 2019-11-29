@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143051162-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-143051162-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>yangnotyang</title>
+  </head>
+  <body>
+    <div class="layout">
+      <div class="row">
+        <h1>Andrew Yang Image Classifier</h1>
+      </div>
+      <div class="row">
+        <div class="image-picker">
+          <button id="upload-button" class="button">Choose picture</button>
+          <div id="file-info">No picture chosen</div>
+        </div>
+        <form method="post" enctype="multipart/form-data" id="upload-form">
+          <input id="file-upload" type="file" name="file" hidden>
+          <input type="submit" value="Classify" class="button" id="classify" disabled>
+        </form>
+      </div>
+      <br>
+      {% if image %}
+      <img src="{{ image }}">
+      {% endif %}
+      <br>
+      <h2>
+        {% if prediction %}
+        Prediction:
+        {{ prediction }}
+        {% endif %}
+      </h2>
+    </div>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </body>
+</html>

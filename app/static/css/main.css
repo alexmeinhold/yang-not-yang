@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+html {
+  background: url(../images/yang.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-picker {
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+.button {
+  height: 40px;
+  width: 190px;
+  font-size: 1.1em;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: rgb(247, 248, 249);
+  border: 1px solid rgb(217, 222, 226);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(237, 238, 239);
+}
