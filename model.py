@@ -130,4 +130,4 @@ model_conv = train_model(
     model_conv, criterion, optimizer_conv, exp_lr_scheduler, num_epochs=25
 )
 
-torch.save(model_conv.state_dict(), "model.pth")
+torch.save(model_conv.state_dict(), "models/model.pth")
