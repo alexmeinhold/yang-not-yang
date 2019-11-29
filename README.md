@@ -8,7 +8,7 @@ source env/bin/activate
 pip install -r requirements.txt
 ```
 
-## Usage
+## Run locally
 ```bash
 export FLASK_APP=main.py
 export FLASK_DEBUG=true
@@ -20,6 +20,12 @@ flask run
 python download_data.py
 python split_data.py
 python model.py
+```
+
+## Deploy
+```bash
+docker build -t yangnotyang .
+docker run -p 80:5000 yangnotyang
 ```
 
 ![](screenshot.png)
