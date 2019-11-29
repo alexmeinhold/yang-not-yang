@@ -33,7 +33,7 @@
       </div>
       <br>
       {% if image %}
-      <img src="{{ image }}">
+      <img src="{{ url_for('get_image', filename=image) }}">
       {% endif %}
       <br>
       <h2>
