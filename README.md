@@ -25,7 +25,7 @@ python model.py
 ## Deploy
 ```bash
 docker build -t yangnotyang .
-docker run -p 80:5000 yangnotyang
+docker run -p 80:5000 -d --restart unless-stopped yangnotyang
 ```
 
 ![](screenshot.png)
