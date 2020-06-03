@@ -1,5 +1,6 @@
 # Yang-not-Yang Image Classifier
-Image Classifier to determine whether Andrew Yang is in a given image or not
+Image classifier to determine whether Andrew Yang is in a given image or not.\
+Inspired by HBO Silicon Valley's hotdog/not-hotdog classifier.
 
 ## Installation
 ```bash
