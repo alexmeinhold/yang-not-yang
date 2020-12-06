@@ -5,10 +5,9 @@ import requests
 from PIL import Image
 
 
-def download_images(urls, destination):
+def download_images(urls_file, destination):
     os.makedirs(destination, exist_ok=True)
-
-    with open(urls) as f:
+    with open(urls_file) as f:
         for index, url in enumerate(f):
             try:
                 response = requests.get(url, stream=True)
@@ -32,7 +31,6 @@ CATEGORIES = ["yang", "not_yang"]
 PATH = "data"
 
 for category in CATEGORIES:
-    urls = category + ".txt"
     destination = os.path.join(PATH, category)
-    download_images(urls, destination)
+    download_images(category + ".txt", destination)
     verify_images(destination)
