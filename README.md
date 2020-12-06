@@ -11,15 +11,13 @@ pip install -r requirements.txt
 
 ## Run locally
 ```bash
-export FLASK_APP=main.py
-export FLASK_DEBUG=true
-flask run
+FLASK_APP=app/ flask run
 ```
 
 ## Train Model
 ```bash
-python download_data.py
-python split_data.py
+python utils/download_data.py
+python utils/split_data.py
 python model.py
 ```
 
@@ -28,5 +26,3 @@ python model.py
 docker build -t yangnotyang .
 docker run -p 80:5000 -d --restart unless-stopped yangnotyang
 ```
-
-![](screenshot.png)
