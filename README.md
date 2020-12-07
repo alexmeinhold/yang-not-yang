@@ -1,4 +1,6 @@
 # Yang-not-Yang Image Classifier
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1-OEDTq5f968CaJBFfOMJJ-80YWs9C8ND?usp=sharing)
+
 Image classifier to determine whether Andrew Yang is in a given image or not.\
 Inspired by HBO Silicon Valley's hotdog/not-hotdog classifier.
 
@@ -12,13 +14,6 @@ pip install -r requirements.txt
 ## Run locally
 ```bash
 FLASK_APP=app/ flask run
-```
-
-## Train Model
-```bash
-python utils/download_data.py
-python utils/split_data.py
-python model.py
 ```
 
 ## Deploy
